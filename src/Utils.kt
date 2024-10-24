@@ -45,3 +45,24 @@ fun Iterable<Int>.product(): Int {
 fun Iterable<Long>.product(): Long {
     return reduce { product, factor -> product * factor }
 }
+
+fun computeLeastCommonMultiple(num1: Long, num2: Long): Long {
+    var multiple1 = num1
+    var multiple2 = num2
+    while (multiple1 != multiple2) {
+        if (multiple1 < multiple2) {
+            multiple1 += num1
+        } else {
+            multiple2 += num2
+        }
+    }
+    return multiple1
+}
+
+fun computeLeastCommonMultiple(nums: List<Long>): Long {
+    var multiple = nums.first()
+    for (i in 1 until nums.size) {
+        multiple = computeLeastCommonMultiple(multiple, nums[i])
+    }
+    return multiple
+}
