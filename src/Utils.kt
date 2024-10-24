@@ -37,3 +37,11 @@ inline fun <T> Iterable<T>.split(predicate: (T) -> Boolean): List<List<T>> {
     result.add(currentList)
     return result
 }
+
+fun Iterable<Int>.product(): Int {
+    return reduce { product, factor -> product * factor }
+}
+
+fun Iterable<Long>.product(): Long {
+    return reduce { product, factor -> product * factor }
+}
