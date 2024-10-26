@@ -66,3 +66,6 @@ fun computeLeastCommonMultiple(nums: List<Long>): Long {
     }
     return multiple
 }
+
+fun String.replace(index: Int, char: Char) =
+    replaceRange(index..index, "$char")
