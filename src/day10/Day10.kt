@@ -3,6 +3,9 @@ package day10
 import println
 import readInput
 import replace
+import util.Vector
+import util.plus
+import util.unaryMinus
 
 private const val folder = "day10"
 
@@ -167,14 +170,6 @@ private fun List<String>.prettyPrint() {
             .replace("S", "\u001b[93mS\u001b[0m")
     }.println()
 }
-
-private typealias Vector = Pair<Int, Int>
-
-private operator fun Vector.unaryMinus() = -first to -second
-
-private operator fun Vector.plus(p: Vector) = (first + p.first) to (second + p.second)
-
-private operator fun Vector.minus(p: Vector) = (first - p.first) to (second - p.second)
 
 private operator fun List<String>.get(p: Vector) = this[p.second][p.first]
 
