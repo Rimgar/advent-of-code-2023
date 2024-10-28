@@ -1,7 +1,7 @@
 package day09
 
-import println
-import readInput
+import util.println
+import util.readInput
 
 private const val folder = "day09"
 

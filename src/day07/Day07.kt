@@ -7,8 +7,8 @@ import day07.Type.HighCard
 import day07.Type.OnePair
 import day07.Type.ThreeOfAKind
 import day07.Type.TwoPair
-import println
-import readInput
+import util.println
+import util.readInput
 
 private const val folder = "day07"
 

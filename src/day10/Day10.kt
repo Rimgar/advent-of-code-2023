@@ -1,8 +1,8 @@
 package day10
 
-import println
-import readInput
-import replace
+import util.println
+import util.readInput
+import util.replace
 import util.Vector
 import util.plus
 import util.unaryMinus

@@ -1,7 +1,7 @@
 package day04
 
-import println
-import readInput
+import util.println
+import util.readInput
 import kotlin.math.min
 import kotlin.math.pow
 

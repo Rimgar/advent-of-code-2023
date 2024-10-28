@@ -2,9 +2,9 @@ package day06
 
 import day06.CalculationType.Analytics
 import day06.CalculationType.Loop
-import println
-import product
-import readInput
+import util.println
+import util.product
+import util.readInput
 import kotlin.math.ceil
 import kotlin.math.floor
 import kotlin.math.pow

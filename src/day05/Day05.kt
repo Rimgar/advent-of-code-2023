@@ -1,8 +1,8 @@
 package day05
 
-import println
-import readInput
-import split
+import util.println
+import util.readInput
+import util.split
 
 private const val folder = "day05"
 

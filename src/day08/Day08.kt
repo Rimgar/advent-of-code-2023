@@ -1,10 +1,10 @@
 package day08
 
-import computeLeastCommonMultiple
+import util.computeLeastCommonMultiple
 import day08.Direction.L
 import day08.Direction.R
-import println
-import readInput
+import util.println
+import util.readInput
 
 private const val folder = "day08"
 

@@ -1,7 +1,7 @@
 package day11
 
-import println
-import readInput
+import util.println
+import util.readInput
 import util.Vector
 import util.cityBlockDistance
 
