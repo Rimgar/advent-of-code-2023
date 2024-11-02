@@ -40,12 +40,22 @@ inline fun <T> Iterable<T>.split(predicate: (T) -> Boolean): List<List<T>> {
     return result
 }
 
+fun <T> List<T>.repeat(n: Int) = List(n) { this }.flatten()
+
 fun Iterable<Int>.product(): Int {
-    return reduce { product, factor -> product * factor }
+    var product = 1
+    for (element in this) {
+        product *= element
+    }
+    return product
 }
 
 fun Iterable<Long>.product(): Long {
-    return reduce { product, factor -> product * factor }
+    var product = 1L
+    for (element in this) {
+        product *= element
+    }
+    return product
 }
 
 fun computeLeastCommonMultiple(num1: Long, num2: Long): Long {
@@ -71,3 +81,8 @@ fun computeLeastCommonMultiple(nums: List<Long>): Long {
 
 fun String.replace(index: Int, char: Char) =
     replaceRange(index..index, "$char")
+
+fun String.repeat(n: Int, separator: String) = List(n) { this }.joinToString(separator)
+
+val IntRange.length: Int
+    get() = last - first + 1
