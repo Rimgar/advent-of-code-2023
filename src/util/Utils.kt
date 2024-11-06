@@ -23,6 +23,11 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
 fun Any?.println() = println(this)
 
 /**
+ * The cleaner shorthand for printing output.
+ */
+fun Any?.print() = print(this)
+
+/**
  * Split a list by a predicate. The items that match the predicate will not be part of the result.
  */
 inline fun <T> Iterable<T>.split(predicate: (T) -> Boolean): List<List<T>> {
