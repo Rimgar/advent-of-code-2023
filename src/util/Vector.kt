@@ -15,3 +15,5 @@ fun Vector.cityBlockDistance(other: Vector) =
     (other - this).let { (first, second) ->
         abs(first) + abs(second)
     }
+
+operator fun List<String>.get(p: Vector) = this[p.second][p.first]

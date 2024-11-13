@@ -4,6 +4,7 @@ import util.println
 import util.readInput
 import util.replace
 import util.Vector
+import util.get
 import util.plus
 import util.unaryMinus
 
@@ -170,6 +171,3 @@ private fun List<String>.prettyPrint() {
             .replace("S", "\u001b[93mS\u001b[0m")
     }.println()
 }
-
-private operator fun List<String>.get(p: Vector) = this[p.second][p.first]
-
