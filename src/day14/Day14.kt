@@ -3,8 +3,6 @@ package day14
 import util.Vector
 import util.println
 import util.readInput
-import util.x
-import util.y
 import kotlin.time.measureTime
 
 private const val folder = "day14"
@@ -86,7 +84,7 @@ private fun Array<CharArray>.moveNorth(): Array<CharArray> {
                 '#' -> currentBlockedRow[columnIndex] = rowIndex
                 'O' -> {
                     currentBlockedRow[columnIndex] += 1
-                    swap(columnIndex to rowIndex, columnIndex to currentBlockedRow[columnIndex])
+                    swap(Vector(columnIndex, rowIndex), Vector(columnIndex, currentBlockedRow[columnIndex]))
                 }
             }
         }
@@ -102,7 +100,7 @@ private fun Array<CharArray>.moveWest(): Array<CharArray> {
                 '#' -> currentBlockedColumn[rowIndex] = columnIndex
                 'O' -> {
                     currentBlockedColumn[rowIndex] += 1
-                    swap(columnIndex to rowIndex, currentBlockedColumn[rowIndex] to rowIndex)
+                    swap(Vector(columnIndex, rowIndex), Vector(currentBlockedColumn[rowIndex], rowIndex))
                 }
             }
         }
@@ -118,7 +116,7 @@ private fun Array<CharArray>.moveSouth(): Array<CharArray> {
                 '#' -> currentBlockedRow[columnIndex] = rowIndex
                 'O' -> {
                     currentBlockedRow[columnIndex] -= 1
-                    swap(columnIndex to rowIndex, columnIndex to currentBlockedRow[columnIndex])
+                    swap(Vector(columnIndex, rowIndex), Vector(columnIndex, currentBlockedRow[columnIndex]))
                 }
             }
         }
@@ -134,7 +132,7 @@ private fun Array<CharArray>.moveEast(): Array<CharArray> {
                 '#' -> currentBlockedColumn[rowIndex] = columnIndex
                 'O' -> {
                     currentBlockedColumn[rowIndex] -= 1
-                    swap(columnIndex to rowIndex, currentBlockedColumn[rowIndex] to rowIndex)
+                    swap(Vector(columnIndex, rowIndex), Vector(currentBlockedColumn[rowIndex], rowIndex))
                 }
             }
         }

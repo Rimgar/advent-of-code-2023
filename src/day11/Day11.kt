@@ -1,9 +1,8 @@
 package day11
 
+import util.Vector
 import util.println
 import util.readInput
-import util.Vector
-import util.cityBlockDistance
 
 private const val folder = "day11"
 
@@ -12,8 +11,8 @@ fun main() {
     // test if implementation meets criteria from the description, like:
     val testInput = readInput("$folder/test")
     check(part1(testInput) == 374)
-    check(part2(testInput,10) == 1030L)
-    check(part2(testInput,100) == 8410L)
+    check(part2(testInput, 10) == 1030L)
+    check(part2(testInput, 100) == 8410L)
 
     val input = readInput("$folder/input")
     part1(input).println()

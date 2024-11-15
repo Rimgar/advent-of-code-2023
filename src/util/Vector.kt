@@ -2,18 +2,24 @@ package util
 
 import kotlin.math.abs
 
-typealias Vector = Pair<Int, Int>
+data class Vector(
+    val x: Int,
+    val y: Int
+) {
 
-operator fun Vector.unaryMinus() = -first to -second
-operator fun Vector.plus(p: Vector) = (first + p.first) to (second + p.second)
-operator fun Vector.minus(p: Vector) = (first - p.first) to (second - p.second)
+    val first = x
+    val second = y
+    val length = abs(x) + abs(y)
 
-val Vector.x get() = first
-val Vector.y get() = second
+    operator fun unaryMinus() = Vector(-x, -y)
+    operator fun plus(p: Vector) = Vector(x + p.x, y + p.y)
+    operator fun minus(p: Vector) = Vector(x - p.x, y - p.y)
+    operator fun times(p: Int) = Vector(x * p, y * p)
+    operator fun div(p: Int) = Vector(x / p, y / p)
 
-fun Vector.cityBlockDistance(other: Vector) =
-    (other - this).let { (first, second) ->
-        abs(first) + abs(second)
-    }
+    fun inRangeOf(input: List<String>) = y in input.indices && x in input.first().indices
 
-operator fun List<String>.get(p: Vector) = this[p.second][p.first]
+    fun cityBlockDistance(other: Vector) = (other - this).length
+}
+
+operator fun List<String>.get(p: Vector) = this[p.y][p.x]

@@ -1,12 +1,10 @@
 package day10
 
+import util.Vector
+import util.get
 import util.println
 import util.readInput
 import util.replace
-import util.Vector
-import util.get
-import util.plus
-import util.unaryMinus
 
 private const val folder = "day10"
 

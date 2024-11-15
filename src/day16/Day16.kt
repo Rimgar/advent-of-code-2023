@@ -6,7 +6,6 @@ import day16.Direction.Right
 import day16.Direction.Up
 import util.Vector
 import util.get
-import util.plus
 import util.println
 import util.readInput
 import kotlin.time.measureTime
@@ -51,7 +50,7 @@ private fun getStartingPoints(input: List<String>): List<Pair<Vector, Direction>
     } + (0..<columnCount).flatMap {
         listOf(
             Vector(it, 0) to Down,
-            Vector(it, rowCount -1) to Up
+            Vector(it, rowCount - 1) to Up
         )
     }
 }
